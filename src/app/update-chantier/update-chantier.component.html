@@ -1,0 +1,16 @@
+<form>
+    <div [hidden]="ajout">
+    <label>ID Chantier</label>
+    <input readonly="!ajout" type="text" [(ngModel)]="chantier.idChantier" name="idChantier" class="form-control w-25">
+    </div>
+    <div>
+    <label>Nom Chantier</label>
+    <input type="text" [(ngModel)]="chantier.nomChantier" name="nomChantier" class="form-control"
+    placeholder="Entrez un nom de chantier...">
+    </div>
+    <div class="mt-2">
+     <button type="submit" [disabled]="!chantier.nomChantier" class="btn btn-success" 
+     (click)="saveChantier()" >{{ajout ? 'Ajouter' : 'Modifier'}}</button>
+    </div>
+    </form>
+    

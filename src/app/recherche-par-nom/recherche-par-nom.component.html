@@ -1,0 +1,43 @@
+<div class="container">
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Nom Ouvrier en tapant</label>
+        <input #nom [(ngModel)]="searchTerm" name="searchTerm" class="form-control" >
+        </div>
+        </form>
+    <!-- <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Nom Produit en tapant</label>
+        <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+        </div>
+        </form> -->
+    <!-- <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Nom Ouvrier</label>
+        <input type="text" class="form-control" [(ngModel)]="nom" name="nom" class="form-control">
+        <button type="submit" (click)="rechercherOuvrs()" class="btn btn-primary mb-2 ml-2">Rechercher</button>
+        </div>
+        </form> -->
+        
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom</th> <th>Telephone</th> <th>Date Embauche</th><th>Salaire</th><th>Chantier</th> </tr>
+    <tbody *ngFor="let ouvrier of ouvriers | filter:searchTerm">
+    <tr >
+    <td>{{ouvrier.idOuvrier}}</td>
+    <td>{{ouvrier.nom}}</td>
+    <td>{{ouvrier.tel}}</td>
+    <td>{{ouvrier.dateEmbauche | date:'dd/MM/yyyy'}}</td>
+    <td>{{ouvrier.salaire}}</td>
+    <td>{{ouvrier.chantier.nomChantier}}</td>
+   
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    
+
+

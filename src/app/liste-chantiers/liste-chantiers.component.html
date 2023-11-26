@@ -1,0 +1,24 @@
+
+    
+<div class="container">
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+        <app-update-chantier [chantier]="updatedChantier" [ajout]="ajout" (chantierUpdated)= "chantierUpdated($event)" ></app-update-chantier>
+    </div>
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+    <tr> <th>Id</th><th>Nom Chantier</th><th>Action</th> </tr>
+    </thead>
+    <tbody *ngFor="let c of chantiers">
+    <tr>
+    <td>{{c.idChantier}}</td>
+    <td>{{c.nomChantier}}</td>
+    <td><a class="btn btn-success" (click)="updateChantier(c)">Editer</a></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    
